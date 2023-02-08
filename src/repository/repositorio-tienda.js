@@ -42,11 +42,13 @@ class RepositorioTienda{
       }
 
  productoMasVendido(){
-
-  for (const prod1 of this.productos) {
-    for (const prod2 of this.productos) {
-  }
-}
+  
+  this.productos.sort(function(a, b) {
+    let left = a.producto.cantidadVendida;
+    let right = b.producto.cantidadVendida;
+    return left === right ? 0 : left > right ? -1 : 1;
+  });
+  console.log(this.productos)
  
 }
 
