@@ -1,33 +1,35 @@
 # Unemi-curso-practico-FrontEnd
 Desarrollo web JavaScript-Bootstrap-JQuery
 ## Ejercicios FrontEnd - `Javascript`
-### Simulador Bancario
-Se quiere crear un programa que permita simular el comportamiento de las cuentas bancarias de un cliente. Un cliente puede tener tres productos financieros básicos:
-1.	Una cuenta corriente. El cliente puede depositar o retirar dinero, pero no recibe ningún interés por el dinero que se encuentre allí depositado.
-2.	Una cuenta de ahorros. El cliente puede depositar o retirar dinero, y recibe un interés mensual del 0.6% sobre el saldo actual.
-3.	Un certificado de depósito a término CDT. Cuando el cliente abre un CDT, define la cantidad de dinero que quiere invertir y negocia con el banco el interés mensual que va a recibir. A diferencia de la cuenta corriente o la cuenta de ahorros, en un CDT no se puede consignar ni retirar dinero. La única operación posible es cerrarlo, en cuyo caso, el dinero y sus intereses pasan a la cuenta corriente.
+### Simulador Manejo de inventario
+Se desea crear una aplicación que permita manejar el inventario de una tienda, conocer
+cuánto dinero hay en caja y tener un control de estadísticas de ventas.
+La tienda maneja cuatro productos. De cada uno de ellos se maneja la siguiente información:
+1. Nombre. No pueden haber dos productos con el mismo nombre.
+2. Tipo (puede ser un producto de papelería, supermercado o droguería).
+3. Cantidad actual del producto en la tienda (número de unidades disponibles para la
+   venta que hay en bodega.
+4. Cantidad mínima para abastecimiento (número de productos por debajo del cual se
+   puede hacer un nuevo pedido al proveedor).
+5. Precio base de venta por unidad.
 
+Para calcular el precio final de cada producto, se deben sumar los impuestos que define la ley
+(IVA). Dichos impuestos dependen del tipo del producto, de la siguiente manera: 
+1. Papelería: 16%
+2. Supermercado: 4%
+3. Droguería: 12%
 
-Estos productos son independientes y tienen comportamientos particulares. El saldo total de la cuenta es la suma de lo que el cliente tiene en cada uno de dichos productos.
+Eso quiere decir que si un lápiz tiene un precio base de $10, el precio final será de $11,6
+considerando que un lápiz es un producto de papelería, y sobre estos se debe pagar el 16% de
+impuestos.
+
 El programa debe permitir al usuario:
-1.	Visualizar el saldo de la cuenta corriente del cliente.
-
-2.	Visualizar el saldo de la cuenta de ahorros del cliente.
-
-3.	Visualizar el saldo del CDT del cliente.
-
-4.	Visualizar el saldo total que tiene el cliente en los productos del banco.
-
-5.	Invertir un monto de dinero en un CDT.
-
-6.	Cerrar la inversión en CDT.
-
-7.	Consignar un monto de dinero en la cuenta corriente del cliente.
-
-8.	Retirar un monto de dinero en la cuenta corriente del cliente.
-
-9.	Consignar un monto de dinero en la cuenta de ahorros del cliente.
-
-10.	Retirar un monto de dinero en la cuenta de ahorros del cliente.
-
-11.	Avanzar en un mes la simulación.
+1. Visualizar la información de los productos.
+2. Vender un producto.
+3. Abastecer la tienda con un producto.
+4. Cambiar un producto.
+5. Calcular estadísticas de ventas:
+    a) El producto más vendido.
+    b) El producto menos vendido.
+    c) La cantidad total de dinero obtenido por las ventas de la tienda.
+    d) La cantidad de dinero promedio obtenido por unidad de producto vendida.
