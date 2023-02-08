@@ -1,0 +1,48 @@
+@startuml
+
+class Producto{
+    codigo: string
+    nombre: string
+    stock: int
+    stockMinimo: int
+    precio: double
+    
+}
+
+class TipoProducto{
+    codigo: string
+    nombre:string
+    }
+
+class TipoIva{
+    codigo : string
+    valor: int
+}
+Class Tienda{
+    caja: double
+}
+
+class RepositorioProductos{
+    productos: list
+    transacciones: list
+    +crear(producto)
+    +editar(producto)
+    +eliminar(codigo)
+}
+
+class CasoUsosTienda{
+    repositorioproductos: RepositorioProductos
+    +vender(producto)
+    +abastecer(producto)
+    +cambiar(codigo,producto)
+    +calcular(tipo)
+}
+
+Tienda *-- Producto
+Producto *--TipoProducto
+TipoProducto *--TipoIva
+
+CasoUsosTienda o-- RepositorioProductos
+CasoUsosTienda ..> Producto
+
+@enduml
